@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import useFetch from "./hook/useFetch";
+import List from "./Components/List/List";
+import {useState} from "react";
+import User from "./Components/User/User";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const [{data, load}] = useFetch(`${process.env.REACT_APP_USERS_URL}users.json`, []);
+  const [user, setUser]= useState(null);
+
+  if(load){
+    return <div className='load'>Загрузка....</div>
+  }
+
+  const handleSetUser = (id)=>{
+    setUser(id)
+  }
+
+  return(
+    <div className='container'>
+      <List items={data} changeUser={handleSetUser}/>
+      {user&& <User userId={user.id}/>}
     </div>
   );
 }

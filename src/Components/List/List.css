@@ -1,0 +1,13 @@
+.list{
+    list-style: none;
+    max-width: 250px;
+}
+
+.list__item{
+    border: 1px solid #8a8b8f;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+
+}

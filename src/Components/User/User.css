@@ -1,0 +1,22 @@
+.user{
+    border: 1px solid #c6c7cc;
+    margin-left: 100px;
+}
+.user>img{
+    width: 100%;
+}
+.user__name{
+    padding: 15px 0 25px 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #c6c7cc;
+}
+
+.user__list{
+    margin: 0;
+    padding: 5px 0;
+    list-style: none;
+}
+
+.user__item{
+    padding: 5px 20px;
+}
